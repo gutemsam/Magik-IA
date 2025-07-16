@@ -1,0 +1,351 @@
+/* Estilos base */
+.game-container {
+  font-family: 'Roboto', sans-serif;
+  background-color: #0e0027;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+/* Barra superior */
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background-color: #1a0037;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 10;
+}
+
+.top-bar img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid #6528d3;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.top-bar img:hover {
+  transform: scale(1.05);
+}
+
+.vs {
+  font-size: 1.1em;
+  font-weight: bold;
+  text-align: center;
+  background: linear-gradient(90deg, #6528d3, #007acc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.turno {
+  font-size: 1.0em;
+  color: #ffcc00;
+  text-align: center;
+  margin-top: 5px;
+  font-weight: 500;
+}
+
+.btn-inicio{
+  position: absolute;
+  bottom: 50px;
+  left: 20%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #6528d3, #007acc);
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.5em;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  z-index: 5;
+}
+
+
+.btn-turno {
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #6528d3, #007acc);
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1em;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  z-index: 5;
+}
+
+.btn-turno:hover {
+  transform: translateX(-50%) scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Tabuleiro */
+.tabuleiro {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 40px 20px 150px; /* Aumentei o padding para a mão do jogador */
+  gap: 20px;
+  max-width: 1400px; /* Aumentei a largura máxima */
+  margin: 0 auto;
+}
+
+.lado {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 48%; /* Ajuste para acomodar cartas maiores */
+  background-color: rgba(26, 0, 55, 0.6);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Cartas no campo (GRANDES) */
+.carta-grande {
+  background: linear-gradient(145deg, #1e0037, #2a0047);
+  border: 3px solid #6528d3;
+  border-radius: 12px;
+  padding: 15px;
+  width: 280px; /* Aumentei a largura */
+  height: 380px; /* Aumentei a altura */
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 1em; /* Aumentei o tamanho da fonte */
+  color: #ffffff;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.carta-grande:hover {
+  transform: translateY(-5px);
+}
+
+.carta-grande img {
+  width: 100%;
+  height: 260px; /* Aumentei bastante a altura da imagem */
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  border: 2px solid #888;
+}
+
+.carta-grande strong {
+  display: block;
+  font-size: 1.4em; /* Aumentei o tamanho */
+  margin-bottom: 10px;
+  color: #ffcc00;
+}
+
+.carta-grande .atributos {
+  display: flex;
+  justify-content: space-around;
+  font-size: 1.2em;
+  margin-top: 10px;
+}
+
+.linha-campo {
+  display: flex;
+  gap: 20px; /* Aumentei o espaçamento */
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Mão do jogador (cartas médias) */
+.mao-jogador {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: linear-gradient(180deg, rgba(34, 0, 68, 0.9), rgba(26, 0, 55, 1));
+  padding: 20px 15px; /* Aumentei o padding */
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Aumentei o espaçamento */
+  overflow-x: auto;
+  z-index: 10;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.carta-jogo {
+  position: relative;
+  background: linear-gradient(145deg, #1e0037, #2a0047);
+  border: 2px solid #6528d3;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.carta-custo {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background: linear-gradient(135deg, gold, #ffd700);
+  color: #000;
+  width: 25px; /* Aumentei o tamanho */
+  height: 25px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 14px; /* Aumentei o tamanho */
+  border: 2px solid #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  z-index: 2;
+}
+
+.carta-imagem-container {
+  width: 100%;
+  height: 160px; /* Aumentei a altura */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carta-imagem {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  border-radius: 5px;
+}
+
+.carta-info {
+
+  font-size: 0.9em; /* Aumentei o tamanho */
+  text-align: center;
+}
+
+.carta-nome {
+  font-weight: bold;
+  margin-bottom: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.carta-atributos {
+  display: flex;
+  justify-content: space-around;
+  font-size: 1em;
+}
+
+/* Estados das cartas */
+.carta.jogavel {
+  border: 2px solid #00cc66;
+  box-shadow: 0 0 20px rgba(0, 204, 102, 0.6); /* Intensifiquei o efeito */
+}
+
+.carta.desabilitada {
+  opacity: 0.5;
+  filter: grayscale(70%);
+  cursor: not-allowed;
+}
+
+/* Efeitos hover */
+.carta:hover {
+  transform: translateY(-12px) scale(1.08); /* Aumentei o efeito */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+  border-color: #ffcc00;
+}
+
+.carta:hover .carta-imagem {
+  transform: scale(1.15); /* Aumentei o zoom */
+}
+
+.carta.desabilitada:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+  .carta-grande {
+    width: 240px;
+    height: 320px;
+  }
+  
+  .carta-grande img {
+    height: 200px;
+  }
+  
+
+  
+
+}
+
+@media (max-width: 768px) {
+  .tabuleiro {
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 180px;
+  }
+  
+  .lado {
+    width: 95%;
+    margin-bottom: 30px;
+  }
+  
+  .carta-grande {
+    width: 200px;
+    height: 280px;
+  }
+  
+  .carta-grande img {
+    height: 180px;
+  }
+  
+  .carta {
+    width: 110px;
+    height: 160px;
+  }
+  
+
+}
+
+
+
+.controle-mao {
+    position: fixed; 
+    bottom: 250px; 
+    left: 20px; 
+    z-index: 20; }
+
+.botao-toggle-mao {
+    background: linear-gradient(135deg, #6528d3, #007acc); 
+    color: white;
+    border: none;
+    padding: 10px 20px; 
+    font-weight: bold;
+    font-size: 0.9em; 
+    border-radius: 30px; 
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+    transition: all 0.3s ease; 
+}
+
+.botao-toggle-mao:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);}

@@ -1,0 +1,309 @@
+.minhas-cartas-container {
+    padding: 25px 10px; 
+    max-width: 600px; 
+    margin: 0 auto;
+    font-family: "Roboto", sans-serif;
+    color: #333333;
+}
+
+.minhas-cartas-container h2 {
+    color: #6528d3;
+    margin-bottom: 17.5px; 
+    font-size: 1.25em; 
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 0.6px; 
+    text-transform: uppercase;
+    text-shadow: 0 0.5px 1.5px rgba(0, 0, 0, 0.05); 
+}
+
+.cartas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 15px; /* Halved from 30px */
+    justify-content: center;
+}
+
+.carta-card {
+    background: linear-gradient(145deg, #ffffff, #f8f8f8);
+    border: 0.5px solid #cbb8e5; 
+    border-radius: 7.5px; 
+    padding: 10px; 
+    text-align: center;
+    color: #333333;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.carta-card:hover {
+    transform: translateY(-4px); 
+    box-shadow: 0 6px 12.5px rgba(0, 0, 0, 0.075); 
+}
+
+.carta-imagem {
+    width: 100%;
+    max-height: 300px; 
+    object-fit: cover;
+    border-radius: 5px; 
+    margin-bottom: 7.5px; 
+    border: 0.5px solid #e0e0e0; 
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.025);
+}
+
+.carta-info h3 {
+    color: #6528d3;
+    margin-bottom: 5px; 
+    font-size: 0.7em; 
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.carta-info p {
+    margin: 3px 0; 
+    font-size: 0.475em; 
+    text-align: left;
+    color: #555555;
+    line-height: 1.4;
+}
+
+.carta-info p strong {
+    color: #333333;
+}
+
+.btn-navegacao {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 7.5px 15px; 
+    background: linear-gradient(135deg, #6528d3, #007acc);
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 4px; 
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.075); 
+    letter-spacing: 0.4px; 
+    text-transform: uppercase;
+}
+
+.btn-navegacao:hover {
+    background: linear-gradient(135deg, #007acc, #6528d3);
+    transform: translateY(-1px);
+    box-shadow: 0 3px 9px rgba(0, 0, 0, 0.1); 
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 15px; 
+    margin: 25px auto 15px; 
+    max-width: 450px; 
+    padding: 12.5px 15px; 
+    border: 0.5px solid #cbb8e5; 
+    border-radius: 6px; 
+    background: linear-gradient(145deg, #ffffff, #f8f8f8);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.user-profile:hover {
+    transform: translateY(-2.5px); 
+    box-shadow: 0 6px 12.5px rgba(0, 0, 0, 0.075); 
+}
+
+.user-avatar {
+    width: 110px; 
+    height: 110px; 
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #6528d3; 
+    box-shadow: 0 0 5px rgba(101, 40, 211, 0.2); 
+    flex-shrink: 0;
+}
+
+.user-info {
+    flex-grow: 1;
+}
+
+.user-info h3 {
+    margin: 0;
+    color: #6528d3;
+    font-size: 1.8em;
+    font-weight: 700;
+    margin-bottom: 4px; 
+    letter-spacing: 0.25px; 
+}
+
+.user-info p {
+    margin: 0;
+    color: #555555;
+    font-size: 1.05em; 
+    line-height: 1.5;
+}
+
+
+@media (max-width: 1024px) { 
+    .cartas-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); 
+        gap: 12.5px; 
+    }
+
+    .carta-card {
+        padding: 9px;
+    }
+
+    .carta-info h3 {
+        font-size: 0.65em; 
+    }
+
+    .carta-info p {
+        font-size: 0.45em; 
+    }
+
+    .user-profile {
+        gap: 12.5px; 
+        padding: 10px 12.5px; 
+        max-width: 400px; 
+    }
+
+    .user-avatar {
+        width: 45px;
+        height: 45px;
+    }
+
+    .user-info h3 {
+        font-size: 0.8em; 
+    }
+
+    .user-info p {
+        font-size: 0.5em; 
+    }
+}
+
+@media (max-width: 768px) {
+    .minhas-cartas-container {
+        padding: 15px 7.5px; 
+    }
+
+    .minhas-cartas-container h2 {
+        font-size: 1em;
+        margin-bottom: 15px; 
+    }
+
+    .cartas-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); 
+        gap: 10px;
+    }
+
+    .carta-card {
+        padding: 7.5px; 
+        border-radius: 6px;
+    }
+
+    .carta-imagem {
+        max-height: 75px; 
+        margin-bottom: 6px; 
+    }
+
+    .carta-info h3 {
+        font-size: 0.6em; 
+        margin-bottom: 4px; 
+    }
+
+    .carta-info p {
+        font-size: 0.425em; 
+        margin: 2.5px 0; 
+    }
+
+    .btn-navegacao {
+        padding: 6px 12.5px; 
+        font-size: 0.475em;
+        margin-top: 15px;
+    }
+
+    .user-profile {
+        flex-direction: column;
+        text-align: center;
+        gap: 7.5px;
+        margin: 20px auto 10px; 
+        padding: 10px; 
+        max-width: 45%;
+    }
+
+    .user-avatar {
+        width: 40px; 
+        height: 40px; 
+        margin-bottom: 2.5px; 
+    }
+
+    .user-info h3 {
+        font-size: 0.7em; 
+        margin-bottom: 2.5px; 
+    }
+
+    .user-info p {
+        font-size: 0.45em; 
+    }
+}
+
+@media (max-width: 480px) { 
+    .minhas-cartas-container {
+        padding: 10px 5px; 
+    }
+
+    .minhas-cartas-container h2 {
+        font-size: 0.9em; 
+        margin-bottom: 12.5px; 
+    }
+
+    .cartas-grid {
+        grid-template-columns: 1fr; 
+        gap: 9px; 
+    }
+
+    .carta-card {
+        padding: 6px;
+        border-radius: 5px; 
+    }
+
+    .carta-imagem {
+        max-height: 60px; 
+        margin-bottom: 5px;
+    }
+
+    .carta-info h3 {
+        font-size: 0.55em; 
+    }
+
+    .carta-info p {
+        font-size: 0.4em; 
+        margin: 2px 0;
+    }
+
+    .btn-navegacao {
+        padding: 5px 10px; 
+        font-size: 0.425em;
+        margin-top: 12.5px; 
+    }
+
+    .user-profile {
+        margin: 15px auto 7.5px; 
+        padding: 7.5px; 
+    }
+
+    .user-avatar {
+        width: 100px; 
+        height: 100px; 
+    }
+
+    .user-info h3 {
+        font-size: 0.6em; 
+    }
+
+    .user-info p {
+        font-size: 0.4em; 
+    }
+}

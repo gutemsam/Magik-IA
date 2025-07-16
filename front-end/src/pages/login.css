@@ -1,0 +1,133 @@
+
+
+/* Login Container */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensure it takes full viewport height for centering */
+    width: 100%; /* Take full width */
+    padding: 20px; /* Add some padding for smaller screens */
+    box-sizing: border-box; /* Include padding in element's total width and height */
+}
+
+/* Login Form Card */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    /* Elegant background for the form card */
+    background: linear-gradient(145deg, #ffffff, #f0f0f0);
+    padding: 40px;
+    border-radius: 12px;
+    gap: 20px; /* Increased gap for better spacing */
+    /* Softer, more refined shadow */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    max-width: 400px; /* Max width for a clean look */
+    width: 100%; /* Ensure it's responsive */
+    border: 1px solid #dcdcdc; /* Subtle border */
+    animation: fadeInScale 0.6s ease-out forwards; /* Add an entrance animation */
+}
+
+/* Animation for form entrance */
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Login Title */
+.login-title {
+    font-size: 2.2em; /* Larger, more impactful title */
+    color: #6528d3; /* Your primary purple */
+    margin-bottom: 25px; /* More space below title */
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle text shadow for depth */
+}
+
+/* Login Input Field */
+.login-input {
+    padding: 15px; /* More padding for a comfortable input area */
+    font-size: 1.1em;
+    border-radius: 8px; /* Softer rounded corners */
+    border: 1px solid #cbb8e5; /* A lighter shade of your purple for the border */
+    background-color: #fcfcfc; /* Very light background for inputs */
+    color: #333333; /* Dark text for readability */
+    transition: all 0.3s ease; /* Smooth transition for focus */
+}
+
+.login-input::placeholder {
+    color: #888; /* Softer placeholder text */
+}
+
+.login-input:focus {
+    outline: none;
+    border-color: #6528d3; /* Primary purple border on focus */
+    box-shadow: 0 0 0 4px rgba(101, 40, 211, 0.2); /* Gentle glow on focus */
+    background-color: #ffffff; /* White background on focus */
+}
+
+
+.login-button {
+    padding: 16px; 
+    background: linear-gradient(135deg, #6528d3, #007acc);
+    color: white;
+    border: none;
+    border-radius: 8px; 
+    cursor: pointer;
+    font-size: 1.15em; 
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); 
+    transition: all 0.3s ease; 
+    margin-top: 15px; 
+}
+
+.login-button:hover {
+    background: linear-gradient(135deg, #007acc, #6528d3);
+    transform: translateY(-2px); 
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25); 
+}
+
+
+@media (max-width: 600px) {
+    .login-form {
+        padding: 30px;
+        margin: 20px; 
+    }
+
+    .login-title {
+        font-size: 1.8em;
+        margin-bottom: 20px;
+    }
+
+    .login-input {
+        padding: 12px;
+        font-size: 1em;
+    }
+
+    .login-button {
+        padding: 14px;
+        font-size: 1.05em;
+    }
+}
+
+@media (max-width: 400px) {
+    .login-form {
+        padding: 25px;
+        margin: 15px;
+        gap: 15px;
+    }
+
+    .login-title {
+        font-size: 1.6em;
+    }
+}

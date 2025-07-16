@@ -1,0 +1,155 @@
+.relatorio-container {
+    padding: 50px;
+    max-width: 950px;
+    margin: 30px auto;
+    font-family: "Roboto", sans-serif;
+    background: linear-gradient(145deg, #ffffff, #f8f8f8);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    color: #333333;
+    border: 1px solid #e0e0e0;
+}
+
+.relatorio-container h2 {
+    color: #6528d3;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.bloco-compra {
+    background-color: #fcfcfc;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 35px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border: 1px solid #eee;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bloco-compra:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.bloco-compra h3 {
+    color: #4a4a4a;
+    font-size: 1.4em;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 10px;
+    font-weight: 600;
+}
+
+.bloco-compra ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.bloco-compra li {
+    margin: 8px 0;
+    font-size: 1.05em;
+    color: #555555;
+    line-height: 1.5;
+}
+
+.bloco-compra li strong {
+    color: #333333;
+    font-weight: 600;
+}
+
+.btn-voltar {
+    display: block;
+    width: fit-content;
+    background: linear-gradient(135deg, #6528d3, #007acc);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    margin: 40px auto 0;
+    font-weight: 600;
+    font-size: 1.1em;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.btn-voltar:hover {
+    background: linear-gradient(135deg, #007acc, #6528d3);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    .relatorio-container {
+        padding: 30px;
+        margin: 20px auto;
+    }
+
+    .relatorio-container h2 {
+        font-size: 2em;
+        margin-bottom: 25px;
+    }
+
+    .bloco-compra {
+        padding: 20px;
+        margin-bottom: 25px;
+    }
+
+    .bloco-compra h3 {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+    }
+
+    .bloco-compra li {
+        font-size: 1em;
+    }
+
+    .btn-voltar {
+        padding: 12px 25px;
+        font-size: 1em;
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .relatorio-container {
+        padding: 20px;
+        margin: 15px auto;
+        border-radius: 10px;
+    }
+
+    .relatorio-container h2 {
+        font-size: 1.8em;
+        margin-bottom: 20px;
+    }
+
+    .bloco-compra {
+        padding: 15px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+    }
+
+    .bloco-compra h3 {
+        font-size: 1.1em;
+        margin-bottom: 8px;
+    }
+
+    .bloco-compra li {
+        font-size: 0.9em;
+        margin: 5px 0;
+    }
+
+    .btn-voltar {
+        padding: 10px 20px;
+        font-size: 0.9em;
+        margin-top: 25px;
+    }
+}

@@ -1,0 +1,284 @@
+.list-container {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 40px;
+    background: linear-gradient(145deg, #ffffff, #f8f8f8);
+    border-radius: 18px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    font-family: "Roboto", sans-serif;
+    transition: box-shadow 0.3s ease;
+    border: 1px solid #e0e0e0;
+    overflow-x: auto;
+}
+
+.list-container:hover {
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+.list-container h2 {
+    color: #6528d3;
+    font-size: 2.2em;
+    margin-bottom: 35px;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+form input {
+    padding: 14px 18px;
+    border-radius: 8px;
+    font-size: 1.05em;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form input::placeholder {
+    color: #a0a0a0;
+}
+
+form input:focus {
+    box-shadow: 0 0 0 4px rgba(101, 40, 211, 0.2);
+}
+
+form input:not([type="submit"]) {
+    flex: 1;
+    min-width: 250px;
+    border: 1px solid #cbb8e5;
+    background-color: #fcfcfc;
+    color: #333333;
+}
+
+form input:not([type="submit"]):focus {
+    border-color: #6528d3;
+    background-color: #ffffff;
+}
+
+form input[type="submit"],
+form button {
+    padding: 14px 25px;
+    border: none;
+    background: linear-gradient(135deg, #6528d3, #007acc);
+    color: #ffffff;
+    cursor: pointer;
+    letter-spacing: 0.8px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-size: 1.05em;
+}
+
+form input[type="submit"]:hover,
+form button:hover {
+    background: linear-gradient(135deg, #007acc, #6528d3);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.95em;
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+table thead {
+    background: linear-gradient(90deg, #6528d3, #a779ed);
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+}
+
+table th,
+table td {
+    padding: 15px 20px;
+    border-bottom: 1px solid #f0f0f0;
+    vertical-align: middle;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tbody tr:hover {
+    background-color: #eef2f7;
+    transition: background-color 0.2s ease;
+}
+
+table img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e0e0e0;
+}
+
+table img:hover {
+    transform: scale(1.08);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+table td .action-buttons {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+table td button,
+table td a {
+    padding: 8px 14px;
+    font-size: 0.9em;
+    border-radius: 6px;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+table td button {
+    background-color: #e74c3c;
+    color: #ffffff;
+}
+
+table td button:hover {
+    background-color: #c0392b;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+table td a {
+    background-color: #6528d3;
+    color: #ffffff;
+}
+
+table td a:hover {
+    background-color: #5c2b8c;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 900px) {
+    .list-container {
+        margin: 40px 20px;
+        padding: 30px;
+    }
+
+    .list-container h2 {
+        font-size: 2em;
+        margin-bottom: 30px;
+    }
+
+    form {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    form input {
+        width: 100%;
+        max-width: none;
+    }
+
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    table thead {
+        display: none;
+    }
+
+    table tr {
+        margin-bottom: 20px;
+        border: 1px solid #e0e0e0;
+        border-radius: 12px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    table td {
+        border-bottom: 1px solid #f0f0f0;
+        text-align: right;
+        position: relative;
+        padding-left: 50%;
+        font-size: 1em;
+    }
+
+    table td:last-child {
+        border-bottom: 0;
+    }
+
+    table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 15px;
+        width: calc(50% - 30px);
+        padding-right: 10px;
+        white-space: nowrap;
+        text-align: left;
+        font-weight: 600;
+        color: #6528d3;
+    }
+
+    table img {
+        width: 60px;
+        height: 60px;
+    }
+
+    table td .action-buttons {
+        justify-content: flex-end;
+    }
+
+    table td button,
+    table td a {
+        padding: 6px 10px;
+        font-size: 0.85em;
+    }
+}
+
+@media (max-width: 600px) {
+    .list-container {
+        padding: 25px;
+        margin: 30px 15px;
+    }
+
+    .list-container h2 {
+        font-size: 1.8em;
+        margin-bottom: 25px;
+    }
+
+    form input {
+        font-size: 0.95em;
+        padding: 12px 15px;
+    }
+
+    table td {
+        padding: 12px 15px;
+        padding-left: 45%;
+    }
+
+    table td::before {
+        left: 10px;
+        width: calc(45% - 20px);
+    }
+}

@@ -1,0 +1,284 @@
+/* Estilos Globais e de Fundo */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f2f5; /* Fundo base muito claro e suave */
+    color: #333333; /* Cor de texto padrão, cinza escuro */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.fundo-home {
+    /* Gradiente sutil para o fundo principal da página, do topo para o fundo */
+    background: linear-gradient(180deg, #e0e5ed 0%, #f0f2f5 100%);
+    flex-grow: 1; /* Faz com que ocupe o espaço restante */
+    display: flex;
+    justify-content: center; /* **Centraliza horizontalmente o conteúdo** */
+    align-items: center; /* **Centraliza verticalmente o conteúdo** */
+    padding: 40px 20px; /* Espaçamento interno */
+}
+
+/* Cabeçalho */
+.cabecalho-home {
+    background-color: #ffffff; /* Fundo branco puro para o cabeçalho */
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra mais leve */
+    border-bottom: 2px solid #a779ed; /* Linha de destaque em um roxo mais suave */
+}
+
+.cabecalho-home .logo-home {
+    height: 70px; /* Tamanho do logo */
+    width: auto;
+    object-fit: contain;
+}
+
+.cabecalho-home .titulo-home {
+    color: #6528d3; /* Roxo principal para o título */
+    font-size: 2em; /* Tamanho do título principal */
+    font-weight: 700;
+    text-shadow: none; /* Removendo sombra para um visual mais limpo */
+    margin: 0;
+    text-align: right;
+    flex-grow: 1;
+    padding-left: 20px;
+}
+
+/* Container do Formulário (o "painel" elegante e claro) */
+.home-container {
+    max-width: 650px;
+    width: 100%;
+    /* Gradiente suave e claro para o fundo do formulário */
+    background: linear-gradient(145deg, #ffffff, #f0f0f0);
+    padding: 45px;
+    border-radius: 15px;
+    /* Sombra mais suave para um efeito de elevação elegante */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    /* Borda sutil para definir o card */
+    border: 1px solid #dcdcdc;
+    animation: fadeIn 0.8s ease-out; /* Mantém a animação de entrada */
+    color: #333333; /* Cor de texto padrão para o conteúdo do formulário */
+    /* **GARANTE A CENTRALIZAÇÃO EM TELAS MENORES OU QUANDO NÃO ESTÁ DENTRO DE UM FLEX CONTAINER ALINHANDO TUDO** */
+    margin: 0 auto; 
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.home-container h1 { /* Este é o h1 dentro do home-container agora */
+    text-align: center;
+    color: #6528d3; /* Roxo principal */
+    margin-bottom: 35px;
+    font-size: 2em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: none; /* Removendo sombra */
+}
+
+/* Título secundário do formulário (o antigo .form-titulo-secundario se você o manteve no JSX) */
+/* Se o seu JSX ainda usa a div com .form-card-container e dentro dela o h2 com .form-titulo-secundario,
+   mantenha este seletor. Caso contrário, se o h1 for o único título, ele não é mais necessário. */
+.form-card-container .form-titulo-secundario {
+    text-align: center;
+    color: #6528d3; /* Roxo principal */
+    margin-bottom: 35px;
+    font-size: 1.8em;
+    font-weight: 600;
+    text-shadow: none; /* Removendo sombra */
+}
+
+/* Formulário e Campos de Input */
+.form-cadastro {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    margin-bottom: 0;
+}
+
+.form-cadastro label {
+    font-weight: 500;
+    display: block;
+    margin-bottom: 8px;
+    color: #4a4a4a; /* Cinza mais escuro para labels para boa legibilidade */
+    font-size: 1.05em;
+    text-shadow: none; /* Removendo sombra */
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="file"] {
+    width: calc(100% - 28px); /* Ajuste para o padding */
+    padding: 14px;
+    margin-bottom: 25px; /* Espaço entre os campos */
+    background-color: #fcfcfc; /* Fundo dos inputs quase branco */
+    color: #333333; /* Texto escuro nos inputs */
+    border: 1px solid #e0e0e0; /* Borda muito suave */
+    border-radius: 8px;
+    font-size: 1.1em;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+form input[type="text"]:focus,
+form input[type="number"]:focus,
+form input[type="file"]:focus {
+    border-color: #6528d3; /* Roxo principal ao focar */
+    box-shadow: 0 0 0 4px rgba(101, 40, 211, 0.2); /* Brilho suave em roxo */
+    outline: none;
+}
+
+/* Estilo para o botão de seleção de arquivo (dentro do input[type="file"]) */
+form input[type="file"]::file-selector-button {
+    background: linear-gradient(90deg, #6528d3, #a779ed); /* Gradiente roxo suave */
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    margin-right: 15px;
+    font-weight: 600;
+}
+
+form input[type="file"]::-webkit-file-upload-button {
+    background: linear-gradient(90deg, #6528d3, #a779ed);
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    margin-right: 15px;
+    font-weight: 600;
+}
+
+form input[type="file"]::file-selector-button:hover,
+form input[type="file"]::-webkit-file-upload-button:hover {
+    background: linear-gradient(90deg, #a779ed, #6528d3); /* Inverte o gradiente no hover */
+    transform: translateY(-1px);
+}
+
+/* Botão de submit */
+form input[type="submit"],
+.btn-submit-card {
+    width: 100%;
+    /* Gradiente vibrante roxo-azul, que é a assinatura do seu site */
+    background: linear-gradient(135deg, #6528d3, #007acc);
+    color: white;
+    padding: 16px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra mais suave */
+    transition: all 0.3s ease;
+    margin-top: 30px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+form input[type="submit"]:hover,
+.btn-submit-card:hover {
+    background: linear-gradient(135deg, #007acc, #6528d3); /* Inverte o gradiente no hover */
+    transform: translateY(-3px); /* Elevação sutil no hover */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Sombra mais intensa no hover */
+}
+
+/* Responsividade (adaptada para o tema claro) */
+@media (max-width: 768px) {
+    .cabecalho-home {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .cabecalho-home .logo-home {
+        margin-bottom: 10px;
+        height: 60px;
+    }
+
+    .cabecalho-home .titulo-home {
+        font-size: 1.7em;
+        text-align: center;
+        padding-left: 0;
+    }
+
+    .fundo-home {
+        padding: 20px 10px;
+    }
+
+    .home-container {
+        padding: 30px;
+        border-radius: 12px;
+    }
+
+    .home-container h1,
+    .form-card-container .form-titulo-secundario {
+        font-size: 1.7em;
+        margin-bottom: 25px;
+    }
+
+    form input[type="text"],
+    form input[type="number"],
+    form input[type="file"] {
+        padding: 12px;
+        font-size: 1em;
+        margin-bottom: 20px;
+    }
+
+    form input[type="file"]::file-selector-button,
+    form input[type="file"]::-webkit-file-upload-button {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+
+    form input[type="submit"],
+    .btn-submit-card {
+        padding: 14px 20px;
+        font-size: 1.1em;
+        margin-top: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cabecalho-home .logo-home {
+        height: 50px;
+    }
+
+    .cabecalho-home .titulo-home {
+        font-size: 1.3em;
+    }
+
+    .home-container {
+        padding: 20px;
+    }
+
+    .home-container h1,
+    .form-card-container .form-titulo-secundario {
+        font-size: 1.4em;
+        margin-bottom: 20px;
+    }
+
+    form input[type="text"],
+    form input[type="number"],
+    form input[type="file"] {
+        padding: 10px;
+    }
+}
